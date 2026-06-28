@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moto Heal | Peças e Acessórios para sua Moto</title>
+  <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=5CgxfgEq7mBc&format=png&color=000000" type="image/x-icon">
+  <style>
+    /* Reset & Estilos Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    :root {
+      --primary-red: #d32f2f;      /* Vermelho Principal */
+      --accent-orange: #f57c00;    /* Laranja de Destaque */
+      --success-green: #388e3c;    /* Verde para Preços e Sucesso */
+      --light-bg: #f9f9f9;         /* Fundo Claro */
+      --white: #ffffff;            /* Branco */
+      --dark-text: #212121;
+      --muted-text: #666666;
+      --border-color: #e0e0e0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Header & Navegação */
+    header {
+      background-color: var(--white);
+      border-bottom: 3px solid var(--primary-red);
+    }
+
+    .topbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: block;
+    }
+
+    .brand {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--dark-text);
+      letter-spacing: -0.5px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .brand span {
+      color: var(--primary-red);
+    }
+
+    nav ul {
+      display: block;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 1.5rem;
+    }
+
+    nav ul li a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--muted-text);
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-red);
+    }
+
+    /* Seção Hero (Apresentação Principal) */
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      color: var(--white);
+      padding: 3rem 1.5rem;
+      position: relative;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-copy {
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-copy p {
+      color: var(--accent-orange);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .hero-copy h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+    }
+
+    .hero-actions {
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      font-weight: 700;
+      border-radius: 4px;
+      text-align: center;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-red);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: #b71c1c;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--white);
+      color: #1a1a1a;
+    }
+
+    /* Cartão de Destaque Visual no Hero (Imagem 1) */
+    .hero-visual {
+      display: block;
+    }
+
+    .product-highlight-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      border-left: 4px solid var(--accent-orange);
+    }
+
+    .preview {
+      padding: 1.5rem;
+    }
+
+    .preview h2 {
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: var(--accent-orange);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .preview p {
+      color: #cccccc;
+      font-size: 0.95rem;
+    }
+
+    .product-highlight-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Área Principal (Main) */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Títulos de Seção */
+    .section-heading {
+      display: block;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.5rem;
+      color: var(--dark-text);
+      display: inline-block;
+    }
+
+    .section-heading a {
+      float: right;
+      color: var(--primary-red);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+    }
+
+    /* Grid de Produtos Responsivo (Tabelas simuladas em CSS para WeasyPrint/Navegadores) */
+    .products-grid {
+      display: block;
+      margin-bottom: 3rem;
+    }
+
+    .product {
+      background-color: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 1.25rem;
+    }
+
+    .product-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-content p {
+      font-size: 0.9rem;
+      color: var(--muted-text);
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: block;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #f0f0f0;
+      color: var(--dark-text);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.25rem;
+      border-left: 2px solid var(--accent-orange);
+    }
+
+    .product-footer {
+      padding: 1rem 1.25rem;
+      background-color: #fafafa;
+      border-top: 1px solid var(--border-color);
+      display: block;
+      overflow: hidden;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--success-green);
+      float: left;
+      line-height: 2.2rem;
+    }
+
+    .buy {
+      background-color: var(--primary-red);
+      color: var(--white);
+      border: none;
+      padding: 0.5rem 1.2rem;
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    .buy:hover {
+      background-color: #b71c1c;
+    }
+
+    /* Blocos Informativos laterais / Destaques */
+    .highlight {
+      background-color: var(--white);
+      border-top: 4px solid var(--success-green);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+    }
+
+    .highlight:nth-of-type(even) {
+      border-top-color: var(--accent-orange);
+    }
+
+    .highlight strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .highlight span {
+      display: block;
+      color: var(--success-green);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Rodapé (Footer) */
+    footer {
+      background-color: #1a1a1a;
+      color: #aaaaaa;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.9rem;
+      border-top: 4px solid var(--primary-red);
+    }
+
+    footer p strong {
+      color: var(--white);
+    }
+
+    .footer-links {
+      margin-top: 1.5rem;
+      display: block;
+    }
+
+    .footer-links a {
+      display: inline-block;
+      margin-right: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #888888;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    /* Mídias de Responsividade para Desktop (Largura da Tela Mínima) */
+    @media (min-width: 768px) {
+      .topbar {
+        display: table;
+        width: 100%;
+      }
+      .brand {
+        display: table-cell;
+        vertical-align: middle;
+        margin-bottom: 0;
+      }
+      nav {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      nav ul li {
+        margin-right: 0;
+        margin-left: 1.5rem;
+      }
+
+      .hero {
+        padding: 5rem 1.5rem;
+      }
+      .hero-container {
+        display: table;
+        width: 100%;
+      }
+      .hero-copy {
+        display: table-cell;
+        width: 55%;
+        vertical-align: middle;
+        padding-right: 3rem;
+        margin-bottom: 0;
+      }
+      .hero-visual {
+        display: table-cell;
+        width: 45%;
+        vertical-align: middle;
+      }
+      .hero-copy h1 {
+        font-size: 3.5rem;
+      }
+
+      .products-grid {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 1.5rem 0;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+      }
+      .product {
+        display: table-cell;
+        width: 33.333%;
+        vertical-align: top;
+        margin-bottom: 0;
+      }
+      
+      .section-flex-desktop {
+        display: table;
+        width: 100%;
+      }
+      .left-col {
+        display: table-cell;
+        width: 65%;
+        vertical-align: top;
+        padding-right: 1.5rem;
+      }
+      .right-col {
+        display: table-cell;
+        width: 35%;
+        vertical-align: top;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="topbar">
+      <a href="#" class="brand"><span>Moto</span>Heal</a>
+      <nav>
+        <ul>
+          <li><a href="#destaques">Peças em Destaque</a></li>
+          <li><a href="#novidades">Lançamentos</a></li>
+          <li><a href="#contato">Fale Conosco</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-copy">
+          <p>Sua moto com o desempenho máximo e segurança total</p>
+          <h1>Peças legítimas. Performance imbatível.</h1>
+          <div class="hero-actions">
+            <a href="#novidades" class="btn btn-primary">Ver Lançamentos</a>
+            <a href="#destaques" class="btn btn-secondary">Explorar Ofertas</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="product-highlight-card">
+            <div class="preview">
+              <h2>Amortecedor Traseiro Pro-Link</h2>
+              <div class="meta">Suspensão | Alta Performance</div>
+              <p>Maximize a estabilidade e o conforto em qualquer terreno com tecnologia hidráulica avançada.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&q=80&w=600" alt="Amortecedor Moto Heal" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="destaques">
+      <div class="section-heading">
+        <h2>Destaques da Semana</h2>
+        <a href="#">Ver todo o catálogo</a>
+      </div>
+                                             
+      <div class="products-grid"> 
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1615887110697-0819ec23465f?auto=format&fit=crop&q=80&w=600" alt="Pastilha de freio cerâmica"/>
+          <div class="product-content"> 
+            <div>
+              <h3>Kit Pastilhas de Freio</h3>
+              <p>Pastilhas de cerâmica de alta fricção para frenagens precisas e menor desgaste dos discos de freio.</p>
+            </div>
+            <div class="tags">
+              <span class="tag">Segurança</span>
+              <span class="tag">Freios</span>
+            </div>
+          </div>
+          <div class="product-footer">
+            <div class="price">R$ 149,90</div>
+            <button class="buy">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&q=80&w=600" alt="Corrente de transmissão" />
+          <div class="product-content">
+            <div>
+              <h3>Kit Transmissão Completo</h3>
+              <p>Corrente reforçada com retentor O-Ring, coroa e pinhão em aço temperado de alta durabilidade.</p>
+            </div>
+            <div class="tags">
+              <span class="tag">Transmissão</span>
+              <span class="tag">Resistência</span>
+            </div>
+          </div>
+          <div class="product-footer">
+            <div class="price">R$ 389,90</div>
+            <button class="buy">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&q=80&w=600" alt="Filtro de ar esportivo" />
+          <div class="product-content">
+            <div>
+              <h3>Filtro de Ar Esportivo</h3>
+              <p>Elemento filtrante de alto fluxo lavável. Proporciona maior ganho de potência para o motor.</p>
+            </div>
+            <div class="tags">
+              <span class="tag">Performance</span>
+              <span class="tag">Motor</span>
+            </div>
+          </div>
+          <div class="product-footer">
+            <div class="price">R$ 119,90</div>
+            <button class="buy">Comprar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="novidades" style="margin-top: 3rem;">
+      <div class="section-heading">
+        <h2>Lançamentos Recentes</h2>
+        <a href="#">Mais novidades</a>
+      </div>
+      
+      <div class="section-flex-desktop">
+        <div class="left-col">
+          <div class="products-grid">
+            <article class="product">
+              <img src="https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?auto=format&fit=crop&q=80&w=600" alt="Vela de ignição Iridium" />
+              <div class="product-content">
+                <div>
+                  <h3>Vela de Ignição Iridium</h3>
+                  <p>Partidas estáveis e rápidas, queima de combustível otimizada e ganho em eficiência.</p>
+                </div>
+                <div class="tags">
+                  <span class="tag">Ignição</span>
+                  <span class="tag">Elétrica</span>
+                </div>
+              </div>
+              <div class="product-footer">
+                <div class="price">R$ 85,90</div>
+                <button class="buy">Comprar</button>
+              </div>
+            </article>
+
+            <article class="product">
+              <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=600" alt="Carburador premium" />
+              <div class="product-content">
+                <div>
+                  <h3>Carburador Premium Racing</h3>
+                  <p>Guilhotina polida para respostas eficientes do acelerador em médias e altas cilindradas.</p>
+                </div>
+                <div class="tags">
+                  <span class="tag">Alimentação</span>
+                  <span class="tag">Racing</span>
+                </div>
+              </div>
+              <div class="product-footer">
+                <div class="price">R$ 420,00</div>
+                <button class="buy">Comprar</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div class="highlight">
+            <strong>Melhores Ofertas de Freios</strong>
+            <span style="color: var(--accent-orange);">Até 25% OFF em itens de segurança</span>
+            <p>Pilote com tranquilidade. Estoque de discos e pastilhas com frete facilitado.</p>
+          </div>
+          <div class="highlight">
+            <strong>Garantia Estendida Moto Heal</strong>
+            <span style="color: var(--success-green);">12 meses de proteção assegurada</span>
+            <p>Todos os componentes mecânicos e internos contam com ampla cobertura nacional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div>
+      <p><strong>Moto Heal</strong> • Loja especializada em peças e componentes mecânicos de alto rendimento. Despachamos com segurança para todo o Brasil.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Suporte e Trocas</a>
+      <a href="#">Fale Conosco (WhatsApp)</a>
+    </div>
+  </footer>
+
+</body>
+</html>
